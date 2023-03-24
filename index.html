@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    class Apple {
+        constructor(name) {
+            this.name = name;
+            this.status = true;
+            this.weight = 10;
+        }
+
+        decrease() {
+            this.weight -= 1;
+        }
+
+        isEmpty() {
+            if (this.weight === 0) {
+                this.status = false;
+                return this.status
+            } else {
+                return this.status;
+            }
+        }
+
+        getWeight() {
+            return `Can nang cua ${this.name}: ${this.weight}`;
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        isMale() {
+            return this.gender;
+        }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+
+        say(text) {
+            console.log(`${this.name}: ${text}`);
+        }
+
+        checkApple(apple) {
+            if (!apple.isEmpty()) {
+                this.say(`${apple.name} da het`)
+            } else {
+                this.say(`${apple.name} van con`)
+            }
+        }
+
+        eat(apple) {
+            if (apple.weight > 0) {
+                apple.decrease();
+                this.weight += 1;
+            } else {
+                console.log(`${apple.name} da het`)
+            }
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getWeight() {
+            return `Can nang cua ${this.name}: ${this.weight}`;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+    }
+
+    let apple_1 = new Apple('Tao_do');
+    let male_human = new Human('Adam', true, 60);
+    let female_human = new Human('Eva', false, 45);
+    male_human.say("Toi la Adam");
+    female_human.say("Toi la Eva");
+    male_human.eat(apple_1);
+    console.log(apple_1.getWeight());
+    console.log(male_human.getWeight());
+    female_human.eat(apple_1);
+    console.log(apple_1.getWeight());
+    console.log(female_human.getWeight());
+    male_human.eat(apple_1);
+    console.log(apple_1.getWeight());
+    console.log(male_human.getWeight());
+    female_human.eat(apple_1);
+    console.log(apple_1.getWeight());
+    console.log(female_human.getWeight());
+    female_human.checkApple(apple_1)
+    male_human.eat(apple_1);
+    console.log(apple_1.getWeight());
+    console.log(male_human.getWeight());
+    female_human.eat(apple_1);
+    console.log(apple_1.getWeight());
+    console.log(female_human.getWeight());
+    male_human.eat(apple_1);
+    console.log(apple_1.getWeight());
+    console.log(male_human.getWeight());
+    female_human.eat(apple_1);
+    console.log(apple_1.getWeight());
+    console.log(female_human.getWeight());
+    male_human.eat(apple_1);
+    console.log(apple_1.getWeight());
+    console.log(male_human.getWeight());
+    female_human.eat(apple_1);
+    console.log(apple_1.getWeight());
+    console.log(female_human.getWeight());
+    male_human.eat(apple_1);
+</script>
